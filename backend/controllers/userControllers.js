@@ -1,7 +1,7 @@
 const jwt = require ('jsonwebtoken')
 const bcrypt = require ('bcrypt')
 const asyncHandler = require('express-async-handler')
-const User = require('../models/userModel')
+const User = require('../models/usersModels')
 
 const registrar =asyncHandler( async(req, res)=>{
     // desestructurar el body
@@ -9,7 +9,7 @@ const registrar =asyncHandler( async(req, res)=>{
     const {nombre, email,password} = req.body
 
     // verificar que nos pasen todos los datos
-    if(!nombre || !email || password){
+    if(!nombre || !email || !password){
         res.status(400)
         throw new Error('Faltan datos')
 

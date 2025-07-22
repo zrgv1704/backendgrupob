@@ -8,7 +8,7 @@ router.post('/', createTareas)
 
 router.put('/:id', updateTareas)
 
-router.put('/:id', deleteTareas)
+router.delete('/:id', deleteTareas)
 
 
 module.exports = router
