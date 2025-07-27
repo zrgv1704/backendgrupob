@@ -3,7 +3,7 @@ const Tarea = require('../models/tareasModels')
 
 const getTareas = asyncHandler( async (req,res)=> {
    
-   const tareas = await Tarea.find({user:req.user.id})
+   const tareas = await Tarea.find({user: req.user.id})
     res.status(200).json(tareas)
 })
 
@@ -55,7 +55,7 @@ const deleteTareas = asyncHandler(async(req,res)=> {
         throw new Error('No se encontro la tarea')
     }
 
-    //nos aseguramos que solo el dueño de la tarea  la pueda modificar
+    //nos aseguramos que solo el dueño de la tarea  la pueda eliminar
     
     if(tarea.user.toString() !== req.user.id){
         res.status(401)

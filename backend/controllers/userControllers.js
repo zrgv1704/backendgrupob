@@ -61,7 +61,7 @@ const login = asyncHandler( async(req, res) =>{
 })
 
 const misDatos = asyncHandler(async (req, res) =>{
-    res.status(200).json(res.user)
+    res.status(200).json(req.user)
 })
 
 //funcion para generar el token
